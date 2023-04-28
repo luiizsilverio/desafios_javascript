@@ -9,15 +9,20 @@ const elementoResultado = (exercicio) => {
     return resultados[exercicio -1];
 }
 
-const mostraResultado = (exercicio, texto) => {
+const mostraResultado = (exercicio, texto, ...rest) => {
     const divResultado = elementoResultado(exercicio); 
     if (!divResultado) return;
 
-    divResultado.removeAttribute("hidden");
-    divResultado.style.display = "flex";
+    divResultado.style.display = rest.length > 0 ? "block" : "flex";
+    divResultado.removeAttribute("hidden");        
+    
     divResultado.innerHTML = `
         <span>Resultado:</span>
         <p>${texto}</p>
+        ${
+            rest.map(linha => `<p>${linha}</p>`)
+            .join('')
+        }
     `;
 }
 
@@ -285,3 +290,121 @@ btn09.addEventListener("click", (e) => {
     
     mostraResultado(09, textResultado);
 })
+
+//------------ EXERCÍCIO 10 - SOMATÓRIO DE 1 A N
+
+const btn10= elementoBotao(10);
+
+const somatorio = (N) => {
+    let result = 0;
+    for (let i = 1; i <= N; i++) {
+        result += i;
+    }
+    return result;
+}
+
+btn10.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const numeroEl = document.querySelector("input#numero10");
+    const numero = parseInt(numeroEl.value);
+    const soma = somatorio(numero);
+    const textResultado = `O somatório de ${numero} é igual a ${soma}`;
+
+    mostraResultado(10, textResultado);
+})
+
+//------------ EXERCÍCIO 11 - TABUADA
+
+const btn11= elementoBotao(11);
+
+const tabuada = (numero, N) => `${numero} X ${N} = ${numero * N}`;
+
+btn11.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const numeroEl = document.querySelector("input#numeroT");
+    const numero = parseInt(numeroEl.value);    
+
+    const textResultado = Array(10).fill(0)
+        .map((_, index) => tabuada(numero, index + 1));
+
+    mostraResultado(11, ...textResultado);
+})
+
+//------------ EXERCÍCIO 12 - NÚMEROS PRIMOS
+
+const btn12= elementoBotao(12);
+
+const numeroPrimo = (N) => {
+    for (let i = 2; i < N; i++)
+    if (N % i === 0) {
+      return false;
+    }
+  return N > 1;
+}
+
+btn12.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const numeroEl = document.querySelector("input#numero12");
+    const numero = parseInt(numeroEl.value);    
+    let textResultado = '';
+    
+    for (let i=2; i <= numero; i++) {
+        if (numeroPrimo(i)) {
+            textResultado = `${i}, ${textResultado}`;
+        }
+    }
+
+    mostraResultado(12, textResultado);
+})
+
+//------------ EXERCÍCIO 13 - EXIBIÇÃO DE PADRÕES
+
+const btn13= elementoBotao(13);
+
+btn13.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const numeroEl = document.querySelector("input#numero13");
+    const numero = parseInt(numeroEl.value);    
+    let textResultado = Array(numero).fill('');
+    
+    textResultado.forEach((_, index) => {
+        textResultado[index] = '*'.repeat(index + 1);
+    });
+
+    mostraResultado(13, ...textResultado);
+})
+
+//------------ EXERCÍCIO 14 - SEQUÊNCIA FIBONACCI
+
+const btn14= elementoBotao(14);
+
+const sequenciaFibonacci = (n) => {
+    const sequencia = [0];
+    let a = 0;
+    let b = 1;
+
+    while (a <= n) {
+        sequencia.push(a);
+        const temp = a;
+        a = b;
+        b = temp + a;
+    }
+    
+    return sequencia;
+}
+
+btn14.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const numeroEl = document.querySelector("input#numero14");
+    const numero = parseInt(numeroEl.value);    
+
+    let textResultado = sequenciaFibonacci(numero);
+    
+    mostraResultado(14, textResultado.join(', '));
+})
+
