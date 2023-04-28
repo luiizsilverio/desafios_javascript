@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos de JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/my-scripts.js" defer></script>
+  </head>
+  <body>
+    <h1>Fundamentos de JavaScript</h1>
+
+    <section class="box">
+      <h2><span>Exercício 01</span> - Conversão de Temperatura</h2>
+      <form>
+        <label for="temperatura">Converter</label>
+        <input type="number" id="temperatura" value="1" style="width: 120px" />
+        <label for="medida-1">De</label>
+        <select id="medida-1" name="medida1">
+          <option value="0" selected>Celsius</option>
+          <option value="1">Farenheit</option>
+        </select>
+        <label for="medida-2">Para</label>
+        <select id="medida-2" name="medida2">
+          <option value="0">Celsius</option>
+          <option value="1" selected>Farenheit</option>
+        </select>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 02</span> - Cálculo de IMC</h2>
+      <form>
+        <label for="peso">Seu peso (Kg):</label>
+        <input type="number" id="peso" value="0" />
+        <label for="altura">Sua altura (M):</label>
+        <input type="number" id="altura" value="1" />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 03</span> - Concatenação de String</h2>
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" />
+        <label for="idade" >Idade:</label>
+        <input type="number" id="idade" value="0" />
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 04</span> - Cálculo de Área e Perímetro</h2>
+      <form>
+        <label for="comprimento" >Comprimento (M):</label>
+        <input type="number" id="comprimento" value="0" style="width: 120px" />
+        <label for="largura">Largura (M):</label>
+        <input type="number" id="largura" value="0" style="width: 120px" />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 05</span> - Verificar Divisibilidade</h2>
+      <form>
+        <label for="numero1" >Número 1:</label>
+        <input type="number" id="numero1" value="0" />
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" value="0" />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 06</span> - Classificação de Faixa Etária</h2>
+      <form>
+        <label for="idade6" >Digite sua idade:</label>
+        <input type="number" id="idade6" value="0" />        
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 07</span> - Comparação de Números</h2>
+      <form>
+        <label for="numero11" >Número 1:</label>
+        <input type="number" id="numero11" value="0" />
+        <label for="numero22">Número 2:</label>
+        <input type="number" id="numero22" value="0" />       
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 08</span> - Calculadora com Switch</h2>
+      <form>
+        <input type="number" id="numeroA" value="0" />
+        <select id="operacao">
+          <option value="+" selected>Mais (+)</option>
+          <option value="-">Menos (-)</option>
+          <option value="*">Multiplicado por</option>
+          <option value="/">Dividido por</option>          
+        </select>
+        <input type="number" id="numeroB" value="0" />       
+        <span> = </span>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 09</span> - Cálculo de Tarifa</h2>
+      <form>
+        <label for="idade9" >Digite sua idade:</label>
+        <input type="number" id="idade9" value="0" />      
+        <label for="estudante" >Estudante</label>
+        <input type="checkbox" id="estudante" />   
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    </body>
+</html>
