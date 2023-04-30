@@ -139,3 +139,56 @@ btn05.addEventListener("click", (e) => {
     
     mostraResultado(05, textResultado);
 })
+
+//------------ EXERCÍCIO 06 - PALÍNDROMO
+
+const btn06 = elementoBotao(06);
+
+const ehPalindromo = (texto) => {
+    const strInvertida = texto.split("").reverse().join("");
+    return texto.toLowerCase() === strInvertida.toLowerCase();    
+}
+
+btn06.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const texto = document.querySelector("input#texto6");
+    const palindromo = ehPalindromo(texto.value);
+    let textResultado;
+
+    palindromo
+        ? textResultado = `O texto informado é um palíndromo`
+        : textResultado = `O texto informado NÃO é um palíndromo`;
+    
+    mostraResultado(06, textResultado);
+})
+
+//------------ EXERCÍCIO 07 - ARRAY DE NÚMEROS ALEATÓRIOS
+
+const btn07 = elementoBotao(07);
+
+const arrayAleatorio = (tamanho, vlmin, vlmax) => {
+    const array = Array(tamanho);
+
+    for (let i = 0; i < tamanho; i++) {
+        array[i] = Math.floor(Math.random() * (vlmax - vlmin + 1) + vlmin);
+    }
+
+    return array;
+}
+
+btn07.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const tamanhoEl = document.querySelector("input#tamanho");
+    const vlminEl = document.querySelector("input#vlmin");
+    const vlmaxEl = document.querySelector("input#vlmax");
+    const tamanho = parseInt(tamanhoEl.value);
+    const vlmin = parseInt(vlminEl.value);
+    const vlmax = parseInt(vlmaxEl.value);
+
+    const array = arrayAleatorio(tamanho, vlmin, vlmax);
+    const textResultado = `[${array.join(", ")}]`;
+    
+    mostraResultado(07, textResultado);
+})
