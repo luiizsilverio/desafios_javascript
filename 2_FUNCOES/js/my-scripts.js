@@ -192,3 +192,42 @@ btn07.addEventListener("click", (e) => {
     
     mostraResultado(07, textResultado);
 })
+
+//------------ EXERCÍCIO 08 - ELEMENTO MAIS FREQUENTE
+
+const btn08 = elementoBotao(08);
+
+const elementoMaisFrequente = (lista) => {    
+    const ranking = {};
+    let vencedor = null;
+    let qtdMax = 0;       
+
+    for (const n of lista) {
+        if (!ranking[n]) {
+            ranking[n] = 1;
+        } else {
+            ranking[n] ++;
+        }
+
+        if (ranking[n] > qtdMax) {
+            qtdMax = ranking[n];
+            vencedor = n;
+        }
+    }
+
+    return vencedor;
+} 
+
+btn08.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const arrayEl = document.querySelector("input#lista8");
+    const lista = arrayEl.value
+        .split(',')
+        .map(item => parseInt(item.trim()));
+
+    const elem = elementoMaisFrequente(lista);
+    const textResultado = `O elemento mais frequente é o número ${elem}.`;
+    
+    mostraResultado(08, textResultado);
+})
