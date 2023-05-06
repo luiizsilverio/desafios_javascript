@@ -45,6 +45,12 @@ section.box:nth-child(odd) {
     background-color: gainsboro;
 }
 
+form.col90 {
+    display: flex; 
+    flex-direction: column; 
+    width: 90%;
+}
+
 input[type=text], input[type=number], select {
     padding: 8px;
     border-radius: 8px;
@@ -64,7 +70,7 @@ h2 span {
     color: blue;
 }
 
-form button {
+button.btn {
     padding: 12px;
     color: antiquewhite;
     background-color: brown;
@@ -73,6 +79,7 @@ form button {
     letter-spacing: 2px;
     transition: all .2s;
     margin: 8px 4px;
+    max-width: 200px;
 }
 
 form button:hover {
