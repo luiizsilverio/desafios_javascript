@@ -1,72 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
-    <script src="js/scripts.js" defer></script>
+    <script src="js/my-scripts.js" defer></script>
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1 id="titulo">DOM</h1>
 
-    <p class="paragrafo">Parágrafo 1</p>
-    <p class="paragrafo">Parágrafo 2</p>
-    <p class="paragrafo">Parágrafo 3</p>
+    <section class="box">
+      <h2><span>Exercício 01</span> - Alterando H1</h2>
+      <form>
+        <h1 class="titulo1">Título H1</h1>
+        <label for="titulo1">Digite o título:</label>
+        <input type="text" id="titulo1" value="Título H1" />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
 
-    <button id="botao-alternar">Alternar ativo</button>
-    <div class="quadrado"></div>
-
-    <button id="adicionarItem">Adicionar item</button>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-
-    <ul>
-      <li class="item">Item 1</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 3</li>
-    </ul>
-
-    <input type="text" id="filtro" placeholder="Digite para filtrar..." />
-    <ul id="lista">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-
-    <button id="moverCima">Mover para cima</button>
-    <button id="moverBaixo">Mover para baixo</button>
-    <ul id="listaMover">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-
-    <button id="abrir">Abrir Modal</button>
-
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Conteúdo do modal</p>
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
       </div>
-    </div>
+    </section>
 
-    <div>
-      <div class="accordion-header">Seção 1</div>
-      <div class="accordion-content">Conteúdo da Seção 1...</div>
-    </div>
-    <div>
-      <div class="accordion-header">Seção 2</div>
-      <div class="accordion-content">Conteúdo da Seção 2...</div>
-    </div>
-    <div>
-      <div class="accordion-header">Seção 3</div>
-      <div class="accordion-content">Conteúdo da Seção 3...</div>
-    </div>
+    <section class="box">
+      <h2><span>Exercício 02</span> - Alterando CSS dos parágrafos</h2>
+      <p class="paragrafo">Crie vários parágrafos no HTML;</p>
+      <p class="paragrafo">Selecione esses elementos com Javascript;</p>
+      <p class="paragrafo">Modifique a cor de todos eles;</p>        
+      <button type="submit" class="btn">Enviar</button>
+
+      <div class="resultado" hidden></div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 03</span> - Alternar classe do elemento</h2>
+        <p>Clique no botão para mudar a cor de fundo</p>
+        <button type="submit" class="btn">Enviar</button>
+
+      <div class="resultado" hidden></div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 04</span> - Adicionar elementos na lista</h2>
+      <ul class="lista4">
+        <li>Linha 1</li>
+        <li>Linha 2</li>
+        <li>Linha 3</li>
+      </ul>
+      <button type="submit" class="btn">Enviar</button>
+      <div class="resultado" hidden></div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 05</span> - Remover elementos da lista</h2>
+      <p>Clique nos elementos da lista:</p>
+      <ul class="lista5">
+        <li class="clicavel">Linha 1</li>
+        <li class="clicavel">Linha 2</li>
+        <li class="clicavel">Linha 3</li>
+        <li class="clicavel">Linha 4</li>
+      </ul>
+      <button type="submit" class="btn">Enviar</button>
+      <div class="resultado" hidden></div>
+    </section>
+
+    <footer>Luiz S.</footer>
   </body>
 </html>
