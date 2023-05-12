@@ -114,3 +114,17 @@ btn05.addEventListener("click", (e) => {
     inicLista5();
 })
 
+//------------ EXERCÍCIO 06 - FILTRAR ITENS
+
+const busca6El = document.querySelector("input#busca6");
+const seriesEl = document.querySelectorAll("ul.lista6 li");
+
+busca6El.addEventListener("keyup", (e) => {
+    e.preventDefault();    
+    const busca = e.target.value.toLowerCase();
+
+    for (li of Array.from(seriesEl)) {
+        li.style.display = li.textContent.toLowerCase().includes(busca) ? "" : "none";
+    }   
+})
+
