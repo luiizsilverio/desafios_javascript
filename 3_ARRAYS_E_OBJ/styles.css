@@ -87,13 +87,19 @@ button.btn {
     cursor: pointer;
 }
 
-form button:hover {
+button:hover {
     transform: scale(1.05);
-    background-color: rgb(136, 35, 35);
+    background-color: rgb(136, 35, 35);    
 }
 
-form button:active {
+button:active {
     transform: translateY(4px);
+}
+
+.btn-up, .btn-down {
+    font-size: 20px;
+    font-weight: bold;
+    width: 60px;
 }
 
 li.clicavel {

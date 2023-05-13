@@ -128,3 +128,54 @@ busca6El.addEventListener("keyup", (e) => {
     }   
 })
 
+//------------ EXERCÍCIO 07 - MOVER ITENS
+
+const btn7upEl = document.querySelector(".box7 .btn-up");
+const btn7downEl = document.querySelector(".box7 .btn-down");
+const livrosEl = document.querySelectorAll("ul.lista7 li");
+
+let idSel = -1;
+
+const seleciona_livro = (e) => { 
+    Array.from(livrosEl).forEach((li, index) => {
+        li.classList.remove("selected");
+        if (li === e.target) {
+            idSel = index;
+        }
+    })
+    e.target.classList.add("selected");
+}
+
+for (li of Array.from(livrosEl)) {
+    li.addEventListener("click", seleciona_livro);
+}
+
+const moverItem = (direcao) => {
+    const itemSelecionado = livrosEl[idSel]; //document.querySelector("ul.lista7 li.selected");
+
+    if (!itemSelecionado) {
+        alert("Selecione um item da lista");
+        return;
+    }
+
+    if (direcao === "up" && idSel === 0) return;
+    if (direcao === "down" && idSel === livrosEl.length -1) return;
+    const lista = itemSelecionado.parentNode;
+    let proxItem;
+    
+    if (direcao === "up") {
+        proxItem = lista.children[--idSel];
+    } else {
+        proxItem = lista.children[++idSel];
+    }
+
+    const temp = proxItem.textContent;
+
+    proxItem.textContent = itemSelecionado.textContent;
+    proxItem.classList.add("selected");
+    itemSelecionado.textContent = temp;
+    itemSelecionado.classList.remove("selected");
+}
+
+btn7upEl.addEventListener("click", () => moverItem("up"));
+btn7downEl.addEventListener("click", () => moverItem("down"));
