@@ -179,3 +179,56 @@ const moverItem = (direcao) => {
 
 btn7upEl.addEventListener("click", () => moverItem("up"));
 btn7downEl.addEventListener("click", () => moverItem("down"));
+
+//------------ EXERCÍCIO 08 - EXIBIR MODAL
+
+// const btnFechar = document.querySelector("button.fechar");
+const modalEl = document.querySelector("div.modal-overlay");
+const btn08 = elementoBotao(08);
+
+function abrir_modal() {
+    modalEl.style.visibility = "visible";
+    modalEl.classList.add("visible");  
+}
+
+function fechar_modal(e) {
+    // e.stopPropagation();
+    if (!e.target.classList.contains('modal')) {
+        modalEl.classList.remove("visible");  
+        modalEl.style.visibility = "hidden";
+    }
+}
+
+btn08.addEventListener("click", abrir_modal);
+// btnFechar.addEventListener("click", (e) => fechar_modal(e));
+modalEl.addEventListener("click", (e) => fechar_modal(e));
+
+//------------ EXERCÍCIO 09 - ACCORDION
+
+const accordionEl = document.querySelector("div.accordion");
+const detailEl = document.querySelectorAll("div.accordion-detail");
+const h3El = document.querySelectorAll("div.accordion h3");
+
+function showDetail(e, index) {
+    closeAllDetails();
+    if (detailEl[index].style.display === "none") {
+        detailEl[index].style.display = "block";
+    } else {
+        detailEl[index].style.display = "none";
+    }
+}
+
+function closeAllDetails() {
+    for (div of detailEl) {
+        div.style.display = "none";
+    }
+}
+
+closeAllDetails();
+
+h3El.forEach((h3, index) => {
+    h3.addEventListener("click", (e) => showDetail(e, index));
+})
+
+
+
