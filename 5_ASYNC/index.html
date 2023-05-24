@@ -28,6 +28,10 @@
 
     <section class="box">
       <h2><span>Exercício 02</span> - Mapear array</h2>
+      <ul>
+        <li>Criar função que simula a função Map;</li>
+        <li>Passar um array para a função, que multiplica os valores por 2.</li>
+      </ul>
       <form>
         <label for="lista2">Array de números:</label>
         <input type="text" id="lista2" style="width: 280px"
@@ -35,6 +39,63 @@
         />
         <button type="submit" class="btn">Enviar</button>
       </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 03</span> - Execução condicional</h2>
+      <ul>
+        <li>Criar função que aceita 3 argumentos;</li>
+        <li>Três funções de callback: verificar, executar e naoExecutar;</li>
+        <li>Se verificar for verdadeiro, deve disparar a função executar;</li>
+        <li>Se for falso, deve disparar a função naoExecutar.</li>
+      </ul>
+      <form>
+        <label for="lista2">Expressão lógica:</label>
+        <input type="text" id="verificar" value="5 > 3" 
+        />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 04</span> - Simulando API</h2>
+      <ul>
+        <li>Criar função simularAPI que recebe um valor e um tempo de espera;</li>
+        <li>A função deve retornar uma Promise que resolve o valor após a espera;</li>
+      </ul>
+      <form>
+        <label for="valor4">Informe o resultado:</label>
+        <input type="text" id="valor4" value="deu certo"  style="width: 120px"
+        />
+        <label for="tempo4">Tempo (em milisegundos):</label>
+        <input type="number" id="tempo4" value="1000" 
+        />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>        
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 05</span> - Carregando dados com Fetch</h2>
+      <ul>
+        <li>Crie uma função que aceita uma URL e retorna uma Promise com os dados;</li>
+        <li>Você pode utilizar a API: <a href="https://jsonplaceholder.typicode.com">jsonplaceholder</a></li>
+      </ul>
+      <button type="submit" class="btn">Enviar</button>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>

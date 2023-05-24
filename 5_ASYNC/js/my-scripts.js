@@ -79,3 +79,87 @@ btn02.addEventListener("click", (e) => {
     
     mostraResultado(02, textResultado);
 })
+
+//------------ EXERCÍCIO 03 - EXECUÇÃO CONDICIONAL
+
+const btn03 = elementoBotao(03);
+
+function verificar(valor) {
+    const verificarEl = document.querySelector('input#verificar');
+    return eval(verificarEl.value);
+}
+
+function executar() {
+    return "Verdadeiro";
+}
+
+function naoExecutar() {
+    return "Falso";
+}
+
+function execucaoCondicional(cbVer, cbExe, cbNao) {
+    return cbVer() ? cbExe() : cbNao();
+}
+
+btn03.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const textResultado = execucaoCondicional(verificar, executar, naoExecutar);   
+    
+    mostraResultado(03, textResultado);
+})
+
+//------------ EXERCÍCIO 04 - SIMULANDO API
+
+const btn04 = elementoBotao(04);
+
+function simularAPI(valor, tempo) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(valor), tempo);
+    })
+}
+
+btn04.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const resultadoEl = document.querySelector('input#valor4');
+    const tempoEl = document.querySelector('input#tempo4');
+    const resultado = resultadoEl.value;
+    const tempo = tempoEl.value;
+
+    const textResultado = await simularAPI(resultado, tempo);
+    
+    mostraResultado(04, textResultado);
+})
+
+//------------ EXERCÍCIO 05 - CARREGANDO DADOS COM FETCH
+
+const btn05 = elementoBotao(05);
+
+function simularAPI(valor, tempo) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(valor), tempo);
+    })
+}
+
+async function buscaAPI() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+        
+        if (!response.ok) return '';
+
+        const data = await response.json();
+
+        return JSON.stringify(data, null, 2);
+    } catch {
+        return '';
+    }
+}
+
+btn05.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const textResultado = await buscaAPI();
+    
+    mostraResultado(05, textResultado);
+})
