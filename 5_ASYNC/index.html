@@ -22,7 +22,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -35,14 +35,14 @@
       <form>
         <label for="lista2">Array de números:</label>
         <input type="text" id="lista2" style="width: 280px"
-          value="1, 25, 8, 25, 7, 1, 25, 8, 9, 0, 7, 7, 7" 
+          value="1, 25, 8, 25, 7, 1, 25, 8, 9, 0, 7, 7, 7"
         />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -56,14 +56,14 @@
       </ul>
       <form>
         <label for="lista2">Expressão lógica:</label>
-        <input type="text" id="verificar" value="5 > 3" 
+        <input type="text" id="verificar" value="5 > 3"
         />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -78,14 +78,14 @@
         <input type="text" id="valor4" value="deu certo"  style="width: 120px"
         />
         <label for="tempo4">Tempo (em milisegundos):</label>
-        <input type="number" id="tempo4" value="1000" 
+        <input type="number" id="tempo4" value="1000"
         />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -99,7 +99,45 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 06</span> - Cadeia de Promises</h2>
+      <ul>
+        <li>Crie uma função que aceita um array de URLs;</li>
+        <li>A função deve fazer solicitações GET a uma API em sequência, até o fim do array;</li>
+        <li>Reúna todos os resultados em um array e insira como retorno da função.</li>
+      </ul>
+      <button type="submit" class="btn">Enviar</button>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2><span>Exercício 07</span> - Retry com Promises</h2>
+      <ul>
+        <li>Crie uma função que tenta acessar uma URL de API em algumas tentativas;</li>
+        <li>A função recebe uma função de chamada da API, o nº máximo de tentativas e o intervalo de retry;</li>
+        <li>Se a Promise for rejeitada, a função deve esperar o tempo de intervalo para tentar novamente.</li>
+        <li>Utilize uma URL fake para simular os erros e uma real.</li>
+      </ul>
+      <form>
+        <label for="lista2">URL da API:</label>
+        <input type="text" id="url"
+          value="https://jsonplaceholder.typicode.com/comments?id=1"
+          style="width: 100%"
+        />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="resultado" hidden>
+        <span>Resultado:</span>
+        <p></p>
       </div>
     </section>
 

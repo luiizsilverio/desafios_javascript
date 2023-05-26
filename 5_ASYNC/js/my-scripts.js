@@ -10,12 +10,12 @@ const elementoResultado = (exercicio) => {
 }
 
 const mostraResultado = (exercicio, texto, ...rest) => {
-    const divResultado = elementoResultado(exercicio); 
+    const divResultado = elementoResultado(exercicio);
     if (!divResultado) return;
 
     divResultado.style.display = rest.length > 0 ? "block" : "flex";
-    divResultado.removeAttribute("hidden");        
-    
+    divResultado.removeAttribute("hidden");
+
     divResultado.innerHTML = `
         <span>Resultado:</span>
         <p>${texto}</p>
@@ -76,7 +76,7 @@ btn02.addEventListener("click", (e) => {
     const newList = myMap(lista, transformacao);
 
     const textResultado = `[${newList.join(', ')}]`;
-    
+
     mostraResultado(02, textResultado);
 })
 
@@ -104,8 +104,8 @@ function execucaoCondicional(cbVer, cbExe, cbNao) {
 btn03.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const textResultado = execucaoCondicional(verificar, executar, naoExecutar);   
-    
+    const textResultado = execucaoCondicional(verificar, executar, naoExecutar);
+
     mostraResultado(03, textResultado);
 })
 
@@ -128,7 +128,7 @@ btn04.addEventListener("click", async (e) => {
     const tempo = tempoEl.value;
 
     const textResultado = await simularAPI(resultado, tempo);
-    
+
     mostraResultado(04, textResultado);
 })
 
@@ -145,7 +145,7 @@ function simularAPI(valor, tempo) {
 async function buscaAPI() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-        
+
         if (!response.ok) return '';
 
         const data = await response.json();
@@ -160,6 +160,75 @@ btn05.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const textResultado = await buscaAPI();
-    
+
     mostraResultado(05, textResultado);
+})
+
+
+//------------ EXERCÍCIO 06 - CADEIA DE PROMISES
+
+const btn06 = elementoBotao(06);
+
+function buscaURL(url) {
+  return fetch(url)
+    .then(response => response.json())
+}
+
+async function executarEmSequencia(urls) {
+    const lista = [];
+
+    for (const url of urls) {
+      const dados = await buscaURL(url);
+      lista.push(dados);
+    }
+
+    return lista;
+}
+
+btn06.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const arrayUrls = [
+        'https://jsonplaceholder.typicode.com/comments?id=1',
+        'https://jsonplaceholder.typicode.com/comments?id=2',
+        'https://jsonplaceholder.typicode.com/comments?id=3',
+    ]
+
+    let textResultado;
+    await executarEmSequencia(arrayUrls)
+      .then(data => textResultado = JSON.stringify(data));
+
+    mostraResultado(06, textResultado);
+})
+
+//------------ EXERCÍCIO 07 - RETRY COM PROMISES
+
+const btn07 = elementoBotao(07);
+
+function tentarNovamente(callback, tentativas, intervalo) {
+  return new Promise(async (resolve, reject) => {
+    for(let retry = 1; retry <= tentativas; retry++) {
+      try {
+        const resultado = await callback();
+        return resolve(resultado);
+      } catch (error) {
+        if (retry === tentativas) return reject(error);
+        await new Promise((r) => setTimeout(r, intervalo));
+      }
+    }
+  })
+}
+
+const fetchComRetry = (url) => fetch(url);
+
+btn07.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const urlEl = document.querySelector('input#url');
+    const url = urlEl.value;
+
+    tentarNovamente(() => fetchComRetry(url), 3, 1000)
+      .then(response => response.json())
+      .then(data => mostraResultado(07, JSON.stringify(data)))
+      .catch(erro => mostraResultado(07, "Erro ao acessar URL"))
 })
