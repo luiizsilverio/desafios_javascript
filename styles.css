@@ -283,6 +283,11 @@ ul {
   list-style-type: circle;
 }
 
+ul.main-menu {
+  width: 90%;
+  max-width: 700px;
+}
+
 ul.main-menu a {
   text-decoration: none;
 }
@@ -302,6 +307,10 @@ i.fas {
   font-size: 24px;
 }
 
+i.fas:hover {
+  transform: scale(1.15);
+}
+
 .titulo {
   display: flex;
   align-items: center;
@@ -312,7 +321,7 @@ i.fas {
 
 .titulo h1 {
   font-size: 32px;
-  color: rgb(47, 46, 87);
+  color: rgb(104, 98, 211);
   width: 100%;
   text-align: center;
 }
