@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundamentos de JavaScript</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <link rel="stylesheet" href="/styles.css">
     <script src="js/my-scripts.js" defer></script>
   </head>
   <body>
-    <h1>Fundamentos de JavaScript</h1>
+    <div class="titulo">
+      <a href="/"><i class="fas fa-arrow-left"></i></a>
+      <h1>Fundamentos de JavaScript</h1>
+      <a href="/"></a>
+    </div>
 
     <section class="box">
       <h2><span>Exercício 01</span> - Conversão de Temperatura</h2>
@@ -31,7 +36,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -47,7 +52,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -65,7 +70,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -81,7 +86,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -97,7 +102,7 @@
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -105,13 +110,13 @@
       <h2><span>Exercício 06</span> - Classificação de Faixa Etária</h2>
       <form>
         <label for="idade6" >Digite sua idade:</label>
-        <input type="number" id="idade6" value="0" />        
+        <input type="number" id="idade6" value="0" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -121,13 +126,13 @@
         <label for="numero11" >Número 1:</label>
         <input type="number" id="numero11" value="0" />
         <label for="numero22">Número 2:</label>
-        <input type="number" id="numero22" value="0" />       
+        <input type="number" id="numero22" value="0" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -139,16 +144,16 @@
           <option value="+" selected>Mais (+)</option>
           <option value="-">Menos (-)</option>
           <option value="*">Multiplicado por</option>
-          <option value="/">Dividido por</option>          
+          <option value="/">Dividido por</option>
         </select>
-        <input type="number" id="numeroB" value="0" />       
+        <input type="number" id="numeroB" value="0" />
         <span> = </span>
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -156,15 +161,15 @@
       <h2><span>Exercício 09</span> - Cálculo de Tarifa</h2>
       <form>
         <label for="idade9" >Digite sua idade:</label>
-        <input type="number" id="idade9" value="0" />      
+        <input type="number" id="idade9" value="0" />
         <label for="estudante" >Estudante</label>
-        <input type="checkbox" id="estudante" />   
+        <input type="checkbox" id="estudante" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -172,13 +177,13 @@
       <h2><span>Exercício 10</span> - Somatório de 1 a N</h2>
       <form>
         <label for="numero10" >Digite um número:</label>
-        <input type="number" id="numero10" value="0" />      
+        <input type="number" id="numero10" value="0" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -186,13 +191,13 @@
       <h2><span>Exercício 11</span> - Tabuada</h2>
       <form>
         <label for="numeroT" >Digite um número de 1 a 10:</label>
-        <input type="number" id="numeroT" value="1" min="1" max="10"/>      
+        <input type="number" id="numeroT" value="1" min="1" max="10"/>
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -200,13 +205,13 @@
       <h2><span>Exercício 12</span> - Números Primos</h2>
       <form>
         <label for="numero12" >Digite um número:</label>
-        <input type="number" id="numero12" value="1" min="1" max="1000" />      
+        <input type="number" id="numero12" value="1" min="1" max="1000" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -214,13 +219,13 @@
       <h2><span>Exercício 13</span> - Exibição de Padrões</h2>
       <form>
         <label for="numero13" >Digite um número:</label>
-        <input type="number" id="numero13" value="1" min="1" max="100" />      
+        <input type="number" id="numero13" value="1" min="1" max="100" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
@@ -228,13 +233,13 @@
       <h2><span>Exercício 14</span> - Sequência Fibonacci</h2>
       <form>
         <label for="numero14" >Digite um número:</label>
-        <input type="number" id="numero14" value="1" min="1" max="100" />      
+        <input type="number" id="numero14" value="1" min="1" max="100" />
         <button type="submit" class="btn">Enviar</button>
       </form>
 
       <div class="resultado" hidden>
         <span>Resultado:</span>
-        <p></p>        
+        <p></p>
       </div>
     </section>
 
